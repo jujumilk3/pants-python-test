@@ -1,5 +1,3 @@
-python_sources(
-    name='lib'
-)
+python_sources(name="lib")
 
-# poetry_requirements()
+poetry_requirements()
