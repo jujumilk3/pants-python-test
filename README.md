@@ -61,10 +61,36 @@
     poetry_requirements()   
    ```
 
-9. run test
+9. run
     api
     `pants run src/python/api:api-server` or
     `pants run src/python/api/main.py`.
     common
     `pants run src/python/common:lib` or
     `pants run src/python/common/main.py`
+
+10. change api `main.py` as fastapi
+
+    ```python
+    from fastapi import FastAPI
+
+    app = FastAPI()
+
+
+    @app.get("/")
+    def home():
+        return {"status": "ok"}
+
+
+    @app.get("/healthcheck")
+    def healthcheck():
+        return {"status": "ok"}
+
+
+    if __name__ == "__main__":
+        import uvicorn
+
+        uvicorn.run(app)
+    ```
+
+    and run `pants run src/python/api:api-server` or `pants run src/python/api/main.py`
