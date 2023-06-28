@@ -50,3 +50,21 @@
 6. Create some python files in `src/python/api` and `src/python/common` directories.
    `__init__.py` doesn't work. In my case, I created `main.py` files.
 7. Run `pants tailor ::` to generate `BUILD` at each directory.
+8. Init with `poetry` And fill `BUILD`.
+   `src/python/api/BUILD`
+
+   ```toml
+    python_sources(
+        name='api-server'
+    )
+
+    poetry_requirements()   
+   ```
+
+9. run test
+    api
+    `pants run src/python/api:api-server` or
+    `pants run src/python/api/main.py`.
+    common
+    `pants run src/python/common:lib` or
+    `pants run src/python/common/main.py`
