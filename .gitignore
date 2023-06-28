@@ -175,7 +175,7 @@ cython_debug/
 .vscode/*
 ./vscode/*
 .history/
-*.code-workspace
+# *.code-workspace
 
 # Pants workspace files
 /.pants.*

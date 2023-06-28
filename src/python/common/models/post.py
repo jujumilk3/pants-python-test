@@ -1,7 +1,8 @@
 from datetime import datetime
 
 from pydantic import BaseModel, Field
-from common.utils import utcnow
+
+from utils import utcnow
 
 
 class CallMessage(BaseModel):
