@@ -5,7 +5,6 @@ from pydantic import BaseModel, Field
 from utils import utcnow
 
 
-class CallMessage(BaseModel):
-    timestamp: datetime = Field(default_factory=utcnow)
-    command: str
-    body: str
+class Post(BaseModel):
+    title: str = Field(..., min_length=1, description="Post title")
+    content: str = Field(..., min_length=1, description="Post content")
