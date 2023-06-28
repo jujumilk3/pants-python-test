@@ -1,0 +1,6 @@
+[GLOBAL]
+pants_version = "2.16.0"
+
+[anonymous-telemetry]
+enabled = true
+repo_id = "55e350b1-b251-4bc2-bd52-5a9ac30d2440"
