@@ -7,9 +7,6 @@
             "path": "./src/python/common"
         },
         {
-            "path": "./src/python/cronjobs"
-        },
-        {
             "path": "./src/python/api"
         }
     ],
