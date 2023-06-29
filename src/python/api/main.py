@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from utils import get_kst_time  # from common
+from api_utils.utils import api_util_function  # from api_utils
 
 from inner.inner_utils import get_kst_time_inner  # from common.common
 
@@ -14,6 +15,11 @@ def home():
 @app.get("/healthcheck")
 def healthcheck():
     return {"status": "ok"}
+
+
+@app.get("/api-util")
+def api_util():
+    return api_util_function()
 
 
 @app.get("/from-common-utils")

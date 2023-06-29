@@ -53,7 +53,7 @@
 8. Init with `poetry` And fill `BUILD`.
    `src/python/api/BUILD`
 
-   ```toml
+   ```python
     python_sources(
         name='api-server'
     )
@@ -99,3 +99,28 @@
 12. use function from `common` in `api`
 13. run `pants run src/python/api/main.py` and test router `GET /from-common-utils`
 14. if you wanna extend utils further with hierarchy structure, create dir and create `BUILD` again by using `pants tailor ::`
+15. if you wanna turn on auto renew fastapi server, you have to write pex at `BUILD` file.
+
+    ```toml
+    # src/python/api/BUILD
+    python_sources(
+        name="api-server",
+        dependencies=[
+            "src/python/common",
+        ],
+    )
+
+
+    pex_binary(
+        name="api-server2",
+        entry_point="main.py",
+        dependencies=[
+            ":api",
+        ],
+        restartable=True,
+    )
+
+    poetry_requirements()
+    ```
+
+    But mostly you will run with uvicorn command at each directory.

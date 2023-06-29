@@ -5,4 +5,14 @@ python_sources(
     ],
 )
 
+
+pex_binary(
+    name="api-server2",
+    entry_point="main.py",
+    dependencies=[
+        ":api",
+    ],
+    restartable=True,
+)
+
 poetry_requirements()
