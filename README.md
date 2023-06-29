@@ -98,3 +98,4 @@
 11. create some util from `common` to use in `api`
 12. use function from `common` in `api`
 13. run `pants run src/python/api/main.py` and test router `GET /from-common-utils`
+14. if you wanna extend utils further with hierarchy structure, create dir and create `BUILD` again by using `pants tailor ::`
