@@ -96,3 +96,5 @@
     and run `pants run src/python/api:api-server` or `pants run src/python/api/main.py`
 
 11. create some util from `common` to use in `api`
+12. use function from `common` in `api`
+13. run `pants run src/python/api/main.py` and test router `GET /from-common-utils`
