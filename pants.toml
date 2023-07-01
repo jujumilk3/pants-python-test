@@ -8,10 +8,14 @@ backend_packages = [
 
 [source]
 root_patterns = [
-    "src/python/api",
-    "src/python/common"
+    "src/python",
+    # "src/python/api",
+    # "src/python/common"
 ]
 
 [anonymous-telemetry]
 enabled = true
 repo_id = "55e350b1-b251-4bc2-bd52-5a9ac30d2440"
+
+[python]
+interpreter_constraints = ["==3.10.*"]
